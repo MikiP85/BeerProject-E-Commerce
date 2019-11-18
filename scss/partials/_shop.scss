@@ -1,0 +1,274 @@
+section.shop {
+  position: relative;
+  top: 200px;
+  height: 100%;
+
+  h4 {
+    text-align: left;
+    // padding: 40px 20px 20px;
+    background-color: $beige-dark;
+    border-bottom: 1px solid $beige;
+  }
+  p.empty-cart {
+    padding: 20px;
+    color: white;
+    background-color: $beige-dark;
+  }
+  .cart {
+    background-color: $beige-dark;
+    padding: 20px 20px;
+    border-bottom: 1px solid $beige;
+  }
+
+  .categories {
+    padding: 40px 30px;
+    background-color: $beige-dark;
+
+    .beer-name-filter {
+      border-bottom: 1px solid $beige;
+      margin-bottom: 20px;
+
+      label {
+        @include h4;
+        display: inline-block;
+      }
+    }
+
+    h4 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        padding: 10px 0px 0;
+        color: $black;
+
+        a {
+          &:hover {
+            color: $red;
+          }
+        }
+        > i {
+          color: $peru;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .view {
+    margin-bottom: 70px;
+    width: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 2em;
+      margin-right: 10px;
+      color: $red;
+    }
+    a:hover i {
+      color: darken($color: $red, $amount: 10%);
+    }
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  .selection {
+    width: 62%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    select {
+      margin-right: 10px;
+      margin-bottom: 30px;
+      background-color: $beige;
+      border: 1px solid $red;
+      border-radius: 3px;
+      padding: 15px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  // Tile view
+
+  .products {
+    ul.products__list {
+      width: 100%;
+      // margin-right: -30px;
+      margin-left: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      li.product {
+        position: relative;
+        float: left;
+        .product-wrap {
+          margin: 10px;
+          background-color: $beige-dark;
+          .product__img {
+            cursor: pointer;
+            padding: 20px 10px;
+            @include ease;
+            &:hover {
+              opacity: 0.5;
+            }
+            &:hover i.fa-beer {
+              opacity: 1;
+              top: 50%;
+            }
+            i.fa-beer {
+              position: absolute;
+              top: 20%;
+              left: 50%;
+              transform: translate(-30%, -170%);
+              color: $red;
+              font-size: 2.5em;
+              opacity: 0;
+              @include ease;
+            }
+          }
+
+          .product__img img {
+            object-fit: contain;
+            width: 235px;
+            height: 300px;
+          }
+
+          .product__details {
+            p.price {
+              margin: 10px 0;
+              text-align: center;
+              color: $red;
+              font-size: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // List view
+  .products {
+    ul.products__list {
+      width: 100%;
+      margin-right: -30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      li.product-list {
+        width: 100%;
+        position: relative;
+        float: left;
+        .product-wrap-list {
+          width: 98%;
+          height: 350px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: 2px solid $peru;
+          border-radius: 5px;
+          margin: 10px;
+          background-color: $beige-dark;
+
+          .product__img-list {
+            border-right: 2px solid $red;
+            cursor: pointer;
+            @include ease;
+
+            img.beer-img-list {
+              object-fit: contain;
+              width: 240px;
+              height: 300px;
+            }
+            &:hover {
+              opacity: 0.5;
+            }
+            &:hover i.fa-beer {
+              opacity: 1;
+              top: 50%;
+            }
+            i.fa-beer {
+              position: absolute;
+              top: 20%;
+              left: 15%;
+              transform: translate(-30%, -170%);
+              color: $red;
+              font-size: 2.5em;
+              opacity: 0;
+              @include ease;
+            }
+          }
+
+          .product__details-list {
+            text-align: left;
+            margin-left: 60px;
+            padding-right: 40px;
+            h4 {
+              font-size: 2em;
+            }
+            p.summary-list {
+              margin-top: 10px;
+              font-size: 1em;
+              color: $black;
+            }
+            p.price-list {
+              margin-top: 20px;
+              font-size: 1.4em;
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #pagination {
+    .page-item {
+      margin: 20px 0;
+      .page-link {
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+        font-family: $ff-ss;
+        font-weight: $fw-m;
+        color: $red;
+        @include ease;
+        &:hover {
+          background-color: $red;
+          color: $beige;
+        }
+      }
+      &.active {
+        border: 1px solid $red;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $beige-dark;
+}
+
+.hidden-spinner {
+  opacity: 0;
+}
+
+.spinner-container {
+  position: relative;
+  left: 44%;
+}
+
+#spinner {
+  height: 120px;
+  width: 120px;
+}

@@ -1,0 +1,109 @@
+input {
+  &.input-field {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 35px;
+    background-color: $beige;
+    border: none;
+    border-radius: 3px;
+    text-indent: 10px;
+    @include h4;
+    font-size: 1.2em;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  h4 {
+    @include h4;
+  }
+}
+
+.alcohol-filter {
+  border-bottom: 1px solid $beige;
+  margin-bottom: 20px;
+
+  label {
+    @include h4;
+  }
+  input.input-field {
+    margin-bottom: 20px;
+  }
+}
+
+.brewed {
+  border-bottom: 1px solid $beige;
+  margin-bottom: 20px;
+
+  label {
+    @include h4;
+  }
+  input[type="month"]::-webkit-inner-spin-button,
+  input[type="month"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  input.input-field {
+    ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+      color: transparent;
+    }
+  }
+}
+
+.food {
+  .styled-checkbox {
+    position: absolute; // take it out of document flow
+    opacity: 0; // hide it
+
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      @include h4;
+      font-size: 1.2em;
+    }
+
+    // Box.
+    & + label:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 140px;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: $beige;
+    }
+
+    // Box hover
+    &:hover + label:before {
+      background: $peru;
+    }
+
+    // Box focus
+    &:focus + label:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+    // Box checked
+    &:checked + label:before {
+      background: $peru;
+    }
+
+    // Checkmark
+    &:checked + label:after {
+      content: "";
+      position: absolute;
+      left: 143px;
+      top: 11px;
+      background: $beige;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white,
+        4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+      transform: rotate(45deg);
+    }
+  }
+}

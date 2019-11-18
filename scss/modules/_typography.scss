@@ -1,0 +1,19 @@
+// Import from google fonts
+@import url("https://fonts.googleapis.com/css?family=Alegreya:400,500,700|Fira+Sans:400,500,700&display=swap");
+
+// Font serif and sans-serif
+$ff-s: "Fira Sans", serif;
+$ff-ss: "Alegreya", serif;
+
+// Font weight
+$fw-n: 400;
+$fw-m: 500;
+$fw-b: 700;
+
+@mixin h4 {
+  font-family: $ff-ss;
+  text-transform: uppercase;
+  color: $red;
+  font-size: 1.5em;
+  font-weight: $fw-b;
+}

@@ -1,0 +1,44 @@
+button {
+  &.btn__aside {
+    margin: 10px 0 20px;
+    border: 2px solid $peru;
+    border-radius: 5px;
+    background-color: $red;
+    padding: 5px;
+    color: $beige;
+    font-size: 1.1em;
+    font-weight: $fw-m;
+    text-transform: uppercase;
+    @include ease;
+    &:hover {
+      background-color: $peru;
+      color: $beige;
+    }
+  }
+  &.btn__add-to-cart {
+    @include h4;
+    margin-top: 10px;
+    color: $beige-dark;
+    width: 100%;
+    height: 60px;
+    background-color: $peru;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+  &.btn__add-to-cart-list {
+    @include h4;
+    margin-top: 10px;
+    color: $beige-dark;
+    width: 150px;
+    height: 40px;
+    background-color: $peru;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}

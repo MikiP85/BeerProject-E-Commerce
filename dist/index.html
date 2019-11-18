@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css"
+    />
+    <!-- Jquery UI -->
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Title</title>
+  </head>
+
+  <body>
+    <nav class="nav-main">
+      <button class="burger" id="burger"></button>
+      <div class="container">
+        <div class="logo float-left">
+          <img src="/assets/images/logo.png" alt="" srcset="" />
+        </div>
+        <ul class="nav-main__links float-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="http://">Brewery</a></li>
+          <li><a href="http://">Events</a></li>
+          <li><a href="http://">Reservation</a></li>
+          <li><a href="http://">Features</a></li>
+          <li><a href="http://">Blog</a></li>
+          <li><a href="http://">Contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="shop">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-3 col-lg-3">
+            <h4 class="p-4">My cart</h4>
+            <p class="empty-cart">No product in the cart.</p>
+            <div class="cart">
+              <!-- Template -->
+            </div>
+            <div class="checkout">
+              <!-- Template -->
+            </div>
+            <div class="categories">
+              <div class="beer-name-filter">
+                <label for="name">Choose your destiny</label>
+                <input
+                  class="input-field"
+                  type="text"
+                  name=""
+                  id="name"
+                  placeholder="Name"
+                />
+              </div>
+
+              <div class="alcohol-filter">
+                <label for="amount">Alcohol range</label>
+                <input class="input-field" type="text" id="amount" readonly />
+                <div id="slider-range"></div>
+              </div>
+
+              <div class="brewed ">
+                <div class="brewed-before mb-3 ">
+                  <label for="brewed-before">Brewed Before</label>
+                  <input
+                    id="brewed-before"
+                    class="input-field"
+                    type="date"
+                    data-toggle="popover"
+                    data-content="Brewed before date must be ahead of "
+                  />
+                </div>
+                <div class="brewed-after ">
+                  <label for="brewed-before">Brewed After</label>
+                  <input id="brewed-after" class="input-field" type="date" />
+                </div>
+              </div>
+
+              <!-- FOOD CHECKBOXES -->
+              <h4>Food</h4>
+              <ul class="food">
+                <li>
+                  <input
+                    class="styled-checkbox"
+                    id="chicken"
+                    type="radio"
+                    value="chicken"
+                    name="radio-group"
+                  />
+                  <label class="picker" for="chicken">Chicken</label>
+                </li>
+                <li>
+                  <input
+                    class="styled-checkbox"
+                    id="cheese"
+                    type="radio"
+                    value="cheese"
+                    name="radio-group"
+                  />
+                  <label class="picker" for="cheese">Cheese</label>
+                </li>
+                <li>
+                  <input
+                    class="styled-checkbox"
+                    id="cake"
+                    type="radio"
+                    value="cake"
+                    name="radio-group"
+                  />
+                  <label class="picker" for="cake">Cake</label>
+                </li>
+                <li>
+                  <input
+                    class="styled-checkbox"
+                    id="salad"
+                    type="radio"
+                    value="salad"
+                    name="radio-group"
+                  />
+                  <label class="picker" for="salad">Salad</label>
+                </li>
+              </ul>
+
+              <button class="btn__aside" id="clear-all">Clear Filters</button>
+
+              <!-- CATEGORIES -->
+              <!-- <ul>
+                <li>
+                  <i class="fas fa-caret-right"></i> <a href="http://">Ale</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <a href="http://">Blonde</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i> <a href="http://">Cider</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <a href="http://">Dark Beer</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <a href="http://">Light Beer</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <a href="http://">Uncategorized</a>
+                </li>
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <a href="http://">Wheat Beer</a>
+                </li>
+              </ul>  -->
+            </div>
+          </div>
+          <div class="col-xl-9 col-lg-9">
+            <div class="row">
+              <div class="view">
+                <a class="tile-view" href="#"><i class="fas fa-th"></i></a>
+                <a class="list-view" href="#"><i class="fas fa-th-list"></i></a>
+                <span>Showing 1–9 of 10 results </span>
+              </div>
+              <!-- <div class="selection">
+                <select name="" id="">
+                  <option value="default">Default sorting</option>
+                  <option value="popularity">Sort by popularity</option>
+                  <option value="avg-rating">Sort by average rating</option>
+                  <option value="latest">Sort by latest</option>
+                </select>
+              </div> -->
+            </div>
+            <div class="row products">
+              <div class="spinner-container">
+                <img
+                  id="spinner"
+                  src="/assets/images/Spinner-1s-200px (red).gif"
+                  alt=""
+                />
+              </div>
+              <ul class="products__list">
+                <!-- Template -->
+                <!-- <div class="lds-spinner">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div> -->
+              </ul>
+            </div>
+            <div class="row justify-content-center  ">
+              <div id="page">
+                <ul id="pagination">
+                  <!-- Template -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Wrapper -->
+    <div id="modal" class="modal-wrapper"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+
+    <!-- Jquery UI JS -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.twbsPagination.js"></script>
+
+    <!--Tile View Handlebars Template -->
+
+    <script id="items-template-tile" type="text/x-handlebars-template">
+
+
+              {{#each items}}
+
+      <li class="product">
+        <div class="product-wrap">
+          <div class="product__img" data-id="{{id}}">
+            <i class="fas fa-beer"></i>
+            {{#if image_url}}
+            <img src="{{image_url}}" alt="" srcset="" />
+            {{else}}
+            <img src="/assets/images/beer.png" alt="" srcset="" />
+            {{/if}}
+        </div>
+
+          <div class="product__details">
+            <p class="price">$ {{attenuation_level}}</p>
+            <button class="btn__add-to-cart" data-id="{{id}}">Add to cart</button>
+          </div>
+        </div>
+      </li>
+
+              {{/each}}
+    </script>
+
+    <!-- List View Handlebars Template  -->
+
+    <script id="items-template-list" type="text/x-handlebars-template">
+
+              {{#each items}}
+      <li class="product-list">
+        <div class="product-wrap-list">
+          <div class="product__img-list" data-id="{{id}}">
+            <i class="fas fa-beer"></i>
+             {{#if image_url}}
+        <img class="beer-img-list" src="{{image_url}}" alt="" srcset="" />
+                {{else}}
+        <img src="/assets/images/beer.png" alt="" srcset="" />
+                {{/if}}
+                </div>
+          <div class="product__details-list">
+            <h4>{{name}}</h4>
+            <p class="summary-list">
+              {{description}}
+            </p>
+            <p class="price-list">$ {{attenuation_level}}</p>
+            <button class="btn__add-to-cart-list" data-id="{{id}}">Add to cart</button>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </script>
+
+    <!-- Modal Template-->
+
+    <script id="template-modal" type="text/x-handlebars-template">
+      <div class="modal modal-scroll">
+          {{#each items}}
+        <div class="modal__head">
+          <a class="btn-close" href="#">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="modal__body">
+          <div class="product__img">
+                  {{#if image_url}}
+                  <img class="beer-img" src="{{image_url}}" alt="" srcset="" />
+                  {{else}}
+                  <img src="/assets/images/beer.png" alt="" srcset="" />
+                  {{/if}}
+                </div>
+                <div class="intro">
+                  <h4>{{name}}</h4>
+                  <h4 class="mb-3">{{tagline}}</h6>
+                    <span>First brewed: {{first_brewed}}</span>
+                    <span>
+                      Alcohol by volume: {{abv}}
+                    </span>
+                    <p class="mt-3">
+                      {{description}}
+                    </p>
+                    <p class="mt-3 px-5">
+                      <h4 class="mb-1">Food Pairing:</h4>
+                      {{#each food_pairing as |item|}}
+                      <p style="color: black">{{item}}</p>
+                      {{/each}}
+                    </p>
+                 </div>
+                </div>
+                <div class="modal__footer">
+                  <p class="price">$ {{attenuation_level}}</p>
+                  <button class="btn__add-to-cart trigger" data-id="{{id}}">Add to cart</button>
+                </div>
+
+         {{/each}}
+        </div>
+    </script>
+
+    <!-- Cart Template -->
+    <script id="template-cart-item" type="text/x-handlebars-template">
+      {{#cart}}
+      <div class="cart__row">
+        <div class="cart-column">
+          <img class="cart-item-image" src="{{image_url}}" />
+        </div>
+        <div class="cart-column name-price">
+          <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{name}}</p>
+          <p><span id="qty">{{quantity}}</span> x <span>$ {{attenuation_level}}</span></p>
+          <label for="quantity">QTY </label>
+          <input type="number" min="1" value="{{quantity}}" name="quantity" id="quantity" data-id="{{id}}" />
+        </div>
+        <div class="remove">
+        <i class="fas fa-times" id="remove"  data-id="{{id}}" data-name="{{name}}"></i>
+        </div>
+      </div>
+      {{/cart}}
+    </script>
+
+    <!-- Checkout Template -->
+
+    <script id="template-checkout" type="text/x-handlebars-template">
+      <div class="checkout__body">
+          <p class="subtotal">Subtotal: $ <span id="subtotal">{{totalPrice}}</span></p>
+          <a href="checkout.html"><button class="btn__aside" id="checkout">Checkout</button></a>
+        </div>
+    </script>
+
+    <!-- No data alert Handlebars template -->
+    <script id="no-data-alert" type="text/x-handlebars-template">
+      <li class="no-data-alert  m-5">
+        <h4>{{alert}}</h4>
+      </li>
+    </script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
